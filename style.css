@@ -121,49 +121,48 @@ padding-bottom: 10%;
     font-size: 12px;
     color: #888;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   
-  /* ۱. تنظیم کانتینر اصلی */
+  /* ۱. منوها رو مجبور کن زیر هم بیان */
   .menu-container {
-    width: 100%;
-    padding: 10px;
-    /* max-height رو کلاً حذف کن */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px !important;
   }
 
-  /* ۲. لوگو و برند رو وسط چین کن */
   .navbar-brand {
-    flex-direction: column;
-    align-items: center; /* تغییر از stretch به center */
-    gap: 15px;
-    padding: 10px;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+
+  /* ۲. گرید (شبکه) کارت‌های خبری رو مجبور کن تک ستونه بشه */
+  .news-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* فقط یک ستون */
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  /* ۳. کارت بزرگ (عکس والیبالیست) رو هم تک ستونه و فول کن */
+  .card-large {
+    grid-column: 1 !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+  /* ۴. از مچاله شدن متن‌ها جلوگیری کن */
+  .news-grid > * {
+    width: 100% !important;
   }
   
-  .logo {
-    font-size: 24px;
-  }
-
-  /* ۳. منوها رو زیر هم بچین (اسم کلاس منوهات رو بذار) */
-  /* اگر منوهات داخل یه تگ <ul> هستن یا کلاس دارن، اینو تنظیم کن */
-  .nav-links { 
-    display: flex;
-    flex-direction: column; /* زیر هم بیان */
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  /* ۴. عکس‌ها از کادر بیرون نزنن (خیلی مهم) */
+  /* ۵. عکس‌ها از کادر بیرون نزنن */
   img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* اگر میخوای گوشه‌ها گرد بشن */
-  }
-  
-  /* تنظیم عکس‌های داخل کارت‌های خبری */
-  .card-large img, .news-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 
