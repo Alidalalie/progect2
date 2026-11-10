@@ -79,3 +79,78 @@
     background: white;
     border-radius: 12px;
     padding: 16px 20px;
+  }
+    /* =========================================
+   تنظیمات مخصوص موبایل (ریسپانسیو)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* ۱. درست کردن منو بالایی (Navbar) */
+    .container-fluid {
+        display: flex !important;
+        flex-direction: column !important; /* زیر هم چیدن */
+        align-items: center !important;
+        padding: 15px !important;
+        gap: 10px !important;
+    }
+
+    .logo img {
+        width: 120px !important; /* لوگو رو توی موبایل کوچیکتر کن */
+        height: auto !important;
+    }
+
+    /* دکمه‌های منو (اخبار، نتایج و...) */
+    .navbar-brand {
+        margin: 0 !important;
+        padding: 5px 10px !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        border-bottom: 1px solid #eee !important; /* یه خط خیلی محو برای جدا کردن */
+        width: 100% !important; /* تمام عرض رو بگیره */
+    }
+
+    /* ۲. درست کردن شبکه کارت‌های خبری (Grid) */
+    .news-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* توی موبایل فقط ۱ ستون باشه */
+        gap: 20px !important;
+        padding: 10px !important; /* یه کم از کناره‌ها فاصله بگیره */
+    }
+
+    /* ۳. تنظیم خودِ کارت‌ها (چه بزرگ، چه کوچیک) */
+    .card {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* عکس‌های داخل کارت‌ها */
+    .card img {
+        width: 100% !important;
+        height: 200px !important; /* ارتفاع ثابت بده که همه عکس‌ها یکدست باشن */
+        object-fit: cover !important; /* عکس رو بدون کشیدگی ببره */
+        border-radius: 8px 8px 0 0 !important;
+    }
+
+    /* متن‌های داخل کارت‌ها */
+    .card-content {
+        padding: 15px !important;
+    }
+
+    .card-content h2, 
+    .card-content h3, 
+    .card-content h4 {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* اطلاعات پایین کارت (ساعت، بازدید و...) */
+    .card-meta {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        font-size: 12px !important;
+        color: #666 !important;
+    }
+}
