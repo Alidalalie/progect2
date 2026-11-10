@@ -121,3 +121,166 @@ padding-bottom: 10%;
     font-size: 12px;
     color: #888;
 }
+
+
+
+.container-fluid{
+display: inline;
+}
+.logo{
+padding-bottom: 10%;
+}
+.navbar-brand{
+   text-decoration: none;
+   padding-left: 10%;
+   padding-bottom: 10%;
+   font-size: 160%;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: black;
+   justify-content: center;
+   text-align: center;
+   padding-right: 60px;
+   cursor: pointer; 
+    color: #333;
+    text-decoration: none;
+    
+    transition: all 0.3s ease; /* این خط جادوییه! باعث میشه تغییرات نرم باشن */
+      background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease
+}
+
+.navbar a:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+      transform: scale(1.1); /* ۱۰٪ بزرگ‌تر میشه */
+        display: inline-block; /* حتماً باید این باشه تا scale کار کنه */
+    transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* سایه پررنگ‌تر میشه */
+    transform: translateY(2px); /* یکم میاد پایین */
+}
+/* گرید اصلی */
+.news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* ستون بزرگ + دو ستون کوچک */
+    grid-template-rows: auto auto;
+    gap: 15px;
+    padding: 20px;
+    direction: rtl;
+}
+
+/* کارت بزرگ اصلی - ۲ ردیف ارتفاع */
+.card-large {
+    grid-column: 1;
+    grid-row: 1 / 3; /* از ردیف ۱ تا ۳ (یعنی ۲ ردیف) */
+}
+
+/* استایل کلی کارت‌ها */
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* عکس کارت بزرگ */
+.card-large img {
+    height: 400px;
+    width: 800px;
+}
+
+/* عکس کارت‌های کوچک راست */
+.card-small img {
+    height: 190px;
+}
+
+/* عکس کارت‌های مینی */
+.card-mini img {
+    height: 120px;
+}
+
+/* محتوای کارت */
+.card-content {
+    padding: 12px;
+    background: white;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: #222;
+    line-height: 1.5;
+}
+
+.card-content h3 {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    color: #333;
+    line-height: 1.4;
+}
+
+.card-content h4 {
+    font-size: 13px;
+    margin: 0 0 6px 0;
+    color: #444;
+    line-height: 1.3;
+}
+
+/* متادیتا (زمان، بازدید، کامنت) */
+.card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr; /* تک ستونه */
+    }
+    
+    .card-large {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+/* ===================================
+   ریسپانسیو مخصوص گوشی (موبایل)
+   این کد رو به آخر فایل CSS اصلیت اضافه کن
+   =================================== */
+
+/* حتماً این خط باید توی head فایل HTML باشه: */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+@media (max-width: 60px) {
+
+  /* منوی بالا (نتایج زنده / اخبار / رقابت / جدول) */
+  .container-fluid,
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  /* لوگو کوچیک‌تر بشه */
+  .logo {
+    font-size: 20px;
+    text-align: center;
+  }
+}
