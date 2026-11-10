@@ -83,74 +83,69 @@
     /* =========================================
    تنظیمات مخصوص موبایل (ریسپانسیو)
    ========================================= */
+/* =========================================
+   نابود کردن استایل‌های مزاحم Bootstrap در موبایل
+   ========================================= */
 @media (max-width: 768px) {
-
-    /* ۱. درست کردن منو بالایی (Navbar) */
-    .container-fluid {
+    
+    /* ۱. منوی بالایی */
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px !important;
+    }
+    
+    .navbar .container-fluid {
         display: flex !important;
         flex-direction: column !important; /* زیر هم چیدن */
         align-items: center !important;
-        padding: 15px !important;
-        gap: 10px !important;
+        width: 100% !important;
+        gap: 8px !important;
     }
 
     .logo img {
-        width: 120px !important; /* لوگو رو توی موبایل کوچیکتر کن */
-        height: auto !important;
+        width: 100px !important;
+        margin-bottom: 10px !important;
     }
 
-    /* دکمه‌های منو (اخبار، نتایج و...) */
+    /* دکمه‌های منو */
     .navbar-brand {
-        margin: 0 !important;
-        padding: 5px 10px !important;
-        font-size: 16px !important;
+        display: block !important;
+        width: 100% !important;
         text-align: center !important;
-        border-bottom: 1px solid #eee !important; /* یه خط خیلی محو برای جدا کردن */
-        width: 100% !important; /* تمام عرض رو بگیره */
+        margin: 0 !important;
+        padding: 10px !important;
+        background-color: #f8f9fa !important; /* یه رنگ روشن که از هم جدا بشن */
+        border-radius: 8px !important;
+        font-size: 16px !important;
     }
 
-    /* ۲. درست کردن شبکه کارت‌های خبری (Grid) */
+    /* ۲. گرید کارت‌های خبری */
     .news-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* توی موبایل فقط ۱ ستون باشه */
+        display: flex !important;
+        flex-direction: column !important; /* کارت‌ها زیر هم */
         gap: 20px !important;
-        padding: 10px !important; /* یه کم از کناره‌ها فاصله بگیره */
+        padding: 15px !important;
     }
 
-    /* ۳. تنظیم خودِ کارت‌ها (چه بزرگ، چه کوچیک) */
     .card {
         width: 100% !important;
         margin: 0 !important;
-        box-sizing: border-box !important;
     }
 
-    /* عکس‌های داخل کارت‌ها */
+    /* ۳. عکس‌ها و متن کارت‌ها */
     .card img {
         width: 100% !important;
-        height: 200px !important; /* ارتفاع ثابت بده که همه عکس‌ها یکدست باشن */
-        object-fit: cover !important; /* عکس رو بدون کشیدگی ببره */
-        border-radius: 8px 8px 0 0 !important;
+        height: 200px !important;
+        object-fit: cover !important;
     }
 
-    /* متن‌های داخل کارت‌ها */
     .card-content {
         padding: 15px !important;
     }
 
-    .card-content h2, 
-    .card-content h3, 
-    .card-content h4 {
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* اطلاعات پایین کارت (ساعت، بازدید و...) */
-    .card-meta {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-        font-size: 12px !important;
-        color: #666 !important;
+    .card h2, .card h3, .card h4 {
+        font-size: 18px !important;
+        margin-top: 10px !important;
     }
 }
